@@ -23,7 +23,7 @@ export function HeroVideo() {
     if (video.current.paused) { try { await video.current.play(); } catch { setFailed(true); } }
     else video.current.pause();
   }
-  return <><video ref={video} className="hero-video" muted loop playsInline preload="none" poster="/assets/scene-5.webp" aria-label="AlayaVista generated seaside promenade video" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setFailed(true)}><source src="/assets/scene-5.mp4" type="video/mp4" /></video>{!failed && <Button className="hero-play" variant="outline" size="icon" aria-label={playing ? 'Pause background video' : 'Play background video'} onClick={toggle}>{playing ? <Pause size={16} /> : <Play size={16} />}</Button>}</>;
+  return <><video ref={video} className="hero-video" muted loop playsInline preload="none" poster="assets/scene-5.webp" aria-label="AlayaVista generated seaside promenade video" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setFailed(true)}><source src="assets/scene-5.mp4" type="video/mp4" /></video>{!failed && <Button className="hero-play" variant="outline" size="icon" aria-label={playing ? 'Pause background video' : 'Play background video'} onClick={toggle}>{playing ? <Pause size={16} /> : <Play size={16} />}</Button>}</>;
 }
 export function Citation() {
   const [status, setStatus] = useState('Copy BibTeX');
@@ -65,7 +65,7 @@ export function Showcase() {
       const context = canvas.getContext('2d');
       canvas.width = 2048;
       canvas.height = 1696;
-      canvas.style.backgroundImage = `url(/assets/showcase/comparison-${selected}.webp)`;
+      canvas.style.backgroundImage = `url(assets/showcase/comparison-${selected}.webp)`;
       if (player && player.readyState >= 2 && context) {
         try { context.drawImage(player, 0, 0, canvas.width, canvas.height); }
         catch { context.clearRect(0, 0, canvas.width, canvas.height); }
@@ -90,11 +90,11 @@ export function Showcase() {
       <canvas ref={outgoing} className="showcase-outgoing" aria-hidden="true" />
       {showcaseScenes.map(scene => <TabsContent key={scene.id} value={scene.id} className="showcase-panel">
         {selected === scene.id && <figure className="showcase-feature">
-          <div className="video-wrap comparison-wrap"><video key={scene.id} controls playsInline muted preload="metadata" poster={`/assets/showcase/comparison-${scene.id}.webp`} aria-label={`${scene.name}: synchronized panorama, rendered perspective, and refined output`}>
-            <source src={`/assets/showcase/comparison-${scene.id}.mp4`} type="video/mp4" />
-            Your browser does not support embedded video. <a href={`/assets/showcase/comparison-${scene.id}.mp4`}>Download this sample.</a>
+          <div className="video-wrap comparison-wrap"><video key={scene.id} controls playsInline muted preload="metadata" poster={`assets/showcase/comparison-${scene.id}.webp`} aria-label={`${scene.name}: synchronized panorama, rendered perspective, and refined output`}>
+            <source src={`assets/showcase/comparison-${scene.id}.mp4`} type="video/mp4" />
+            Your browser does not support embedded video. <a href={`assets/showcase/comparison-${scene.id}.mp4`}>Download this sample.</a>
           </video></div>
-          <figcaption className="showcase-caption"><div><span className="showcase-caption-title">{scene.name}</span><span className="showcase-motion">{scene.motion} · ~30 sec</span></div><a href={`/assets/showcase/comparison-${scene.id}.mp4`} download aria-label={`Download ${scene.name} comparison video`}>Download <ArrowUpRight size={15} /></a></figcaption>
+          <figcaption className="showcase-caption"><div><span className="showcase-caption-title">{scene.name}</span><span className="showcase-motion">{scene.motion} · ~30 sec</span></div><a href={`assets/showcase/comparison-${scene.id}.mp4`} download aria-label={`Download ${scene.name} comparison video`}>Download <ArrowUpRight size={15} /></a></figcaption>
           <p className="showcase-video-note">Panorama → Rendered → Refined · Frame-synchronized playback</p>
         </figure>}
       </TabsContent>)}

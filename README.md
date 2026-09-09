@@ -50,3 +50,9 @@ Showcase 的六个样例使用同一场景和轨迹对应的三路完整视频�
 `app/refined-gallery.tsx` 展示 18 条约 30 秒的 Refined 完整视频，三行交错方向慢速循环滚动。悬停或键盘聚焦暂停该行滚动；全局按钮暂停滚动与播放；点击卡片打开可关闭的原生控件播放器。仅加载进入视区的预览，离开视区或切换浏览器标签后暂停。遵循系统减少动态效果偏好。
 
 `scripts/build_refined_gallery.py` 从 18 组原始 `stage2/wan50.mp4` 生成 768×432 网页视频和首帧封面，均为 477 帧、16 fps。来源记录在 `public/assets/refined/sources.json`，页面数据在 `app/refined-samples.json`。
+
+## GitHub Pages
+
+运行 `pnpm build:pages` 生成 `dist/pages/`。独立静态入口复用主页与交互组件，资源路径适配 `/AlayaVista/`，本地开发仍使用 `pnpm dev`。
+
+仓库管理员需在 Settings → Pages 中将 Source 设置为 GitHub Actions。`.github/workflows/pages.yml` 会在 main 分支更新时自动构建和部署，也可以手动运行。私有组织仓库需要支持 Pages 的 GitHub 套餐。
