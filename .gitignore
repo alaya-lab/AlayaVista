@@ -39,3 +39,6 @@ next-env.d.ts
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Local Sites configuration
+/.openai/
