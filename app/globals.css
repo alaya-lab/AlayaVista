@@ -101,3 +101,11 @@
 .header-brand-divider{height:28px;width:1px;background:#ffffff30}
 @media(max-width:700px){.header-brand{gap:10px}.header-brand .alaya-lab-logo{width:38px;max-height:36px}.header-brand-divider{height:24px}.header-brand .wordmark{font-size:20px}}
 @media(max-width:380px){.header-brand{gap:7px}.header-brand .alaya-lab-logo{width:32px}.header-brand .wordmark{font-size:18px}.header-paper{font-size:11px}}
+
+/* Introduction video below the author credits. */
+.hero-actions{flex-wrap:wrap}
+.intro-video{padding-top:64px}
+.intro-video h2{font-size:clamp(32px,4vw,44px);font-weight:400;letter-spacing:-1.5px;margin:0}
+.intro-video h2 em{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#dba38e}
+.intro-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#14141a;border:1px solid var(--border);border-radius:8px}
+@media(max-width:700px){.intro-video{padding-top:40px}}

@@ -1,6 +1,6 @@
 /* oxlint-disable next/no-img-element -- Pre-optimized static images also run on GitHub Pages without an image server. */
 import { RefinedGallery } from './refined-gallery';
-import { ArrowDown, ArrowUpRight, FileText, Code2 } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, FileText, Code2, Play } from 'lucide-react';
 import { HeroVideo, Citation, Showcase } from './site-interactions';
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@/components/ui/table';
 
@@ -28,7 +28,7 @@ export default function Home() {
           <div className="eyebrow"><span /> CAMERA-CONTROLLABLE WORLD MODEL</div>
           <h1>Alaya<span>Vista</span></h1>
           <p className="hero-subtitle">Streaming World Modeling<br />from Panoramic States to Perspective Video</p>
-          <div className="hero-actions"><a className="action action-light" href="assets/AlayaVista.pdf" target="_blank" rel="noreferrer"><FileText size={17} /> Read the paper <ArrowUpRight size={16} /></a><a className="action action-glass" href="https://github.com/alaya-lab/AlayaVista" target="_blank" rel="noreferrer"><Code2 size={17} /> Code <ArrowUpRight size={16} /></a></div>
+          <div className="hero-actions"><a className="action action-light" href="assets/AlayaVista.pdf" target="_blank" rel="noreferrer"><FileText size={17} /> Read the paper <ArrowUpRight size={16} /></a><a className="action action-glass" href="https://github.com/alaya-lab/AlayaVista" target="_blank" rel="noreferrer"><Code2 size={17} /> Code <ArrowUpRight size={16} /></a><a className="action action-glass" href="#intro-video"><Play size={17} /> Watch video</a></div>
         </div>
         <div className="hero-bottom"><span>GLOBAL CONTEXT. SELECTIVE DETAIL.</span><a href="#overview">Explore the research <ArrowDown size={16} /></a><span>360° → YOUR VIEW</span></div>
       </section>
@@ -37,6 +37,13 @@ export default function Home() {
         <div className="affiliations"><span><sup>1</sup> ALAYA LAB</span><span><sup>2</sup> BEIJING INSTITUTE OF TECHNOLOGY</span><span><sup>3</sup> UNIVERSITY OF TOKYO</span></div>
         <p className="author-notes">* Work done during internship at Alaya Lab &nbsp; † Corresponding author &nbsp; ‡ Project lead</p>
       </div>
+      <section id="intro-video" className="intro-video content-width" aria-labelledby="intro-video-title">
+        <div className="section-heading"><h2 id="intro-video-title">Meet <em>AlayaVista.</em></h2><p>Watch the 90-second introduction.</p></div>
+        <video controls playsInline preload="none" poster="assets/intro-video-poster.webp" width={1920} height={1080} aria-label="AlayaVista introduction with music">
+          <source src="assets/AlayaVista_intro_homepage_music.mp4" type="video/mp4" />
+          Your browser does not support embedded video. <a href="assets/AlayaVista_intro_homepage_music.mp4">Download the introduction video</a>.
+        </video>
+      </section>
       <section id="overview" className="section content-width">
         <Label n="01">THE IDEA</Label>
         <div className="split-heading"><h2>A world beyond<br />the <em>field of view.</em></h2><div><p className="lead">Keep the whole scene in context.<br />Bring the view you choose into focus.</p><p>AlayaVista separates panoramic world evolution from perspective observation synthesis. Starting from a single image, it maintains a camera-conditioned 360° latent state, renders the requested viewport, and refines that view into detailed video.</p></div></div>
@@ -58,6 +65,6 @@ export default function Home() {
       <section id="results" className="section content-width"><Label n="05">EVALUATION</Label><div className="section-heading"><h2>A closer look at <em>quality.</em></h2><p>200 MUGEN-HQ evaluation cases.<br />All metrics measure final perspective videos.</p></div><div className="results-table"><Table><TableHeader><TableRow>{['Method', 'SSIM ↑', 'LPIPS ↓', 'Consistency ↑', 'Quality ↑', 'Dynamic ↑', 'PSNR ↑', 'TransErr ↓', 'RotErr ↓'].map(h => <TableHead key={h}>{h}</TableHead>)}</TableRow></TableHeader><TableBody>{metrics.map((row, index) => <TableRow className={index === 2 ? 'ours' : ''} key={row[0]}>{row.map((cell, i) => <TableCell key={i}>{cell}{index === 2 && i === 0 && <span className="ours-label">OURS</span>}</TableCell>)}</TableRow>)}</TableBody></Table></div><p className="table-note">Values from Table 1 of the paper. ↑ Higher is better. ↓ Lower is better. Metrics capture different aspects of quality and camera following.</p></section>
       <section id="citation" className="section citation-section content-width"><Label n="06">CITATION</Label><div className="section-heading"><h2>Build on <em>AlayaVista.</em></h2><a className="text-link" href="assets/AlayaVista.pdf" target="_blank" rel="noreferrer">Read the full paper <ArrowUpRight size={17} /></a></div><Citation /></section>
     </main>
-    <footer className="footer content-width"><div><a className="wordmark" href="#home">Alaya<span>Vista</span><span className="brand-dot" /></a><p>From panoramic states to perspective video.</p></div><div className="footer-contact"><span>CONTACT</span><a href="mailto:chuanhao.li@shanda.com">chuanhao.li@shanda.com <ArrowUpRight size={14} /></a><a href="mailto:kaipeng.zhang@shanda.com">kaipeng.zhang@shanda.com <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>Alaya Lab · 2026</span><a href="https://evoke-world.github.io/Evoke/" target="_blank" rel="noreferrer">Design inspired by Evoke <ArrowUpRight size={13} /></a><a href="#home">Back to top ↑</a></div></footer>
+    <footer className="footer content-width"><div><a className="wordmark" href="#home">Alaya<span>Vista</span><span className="brand-dot" /></a><p>From panoramic states to perspective video.</p></div><div className="footer-contact"><span>CONTACT</span><a href="mailto:wuyuwei@bit.edu.cn">wuyuwei@bit.edu.cn <ArrowUpRight size={14} /></a><a href="mailto:chuanhao.li@shanda.com">chuanhao.li@shanda.com <ArrowUpRight size={14} /></a><a href="mailto:kaipeng.zhang@shanda.com">kaipeng.zhang@shanda.com <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>Alaya Lab · 2026</span><a href="https://evoke-world.github.io/Evoke/" target="_blank" rel="noreferrer">Design inspired by Evoke <ArrowUpRight size={13} /></a><a href="#home">Back to top ↑</a></div></footer>
   </>;
 }

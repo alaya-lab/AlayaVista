@@ -56,3 +56,9 @@ Showcase 的六个样例使用同一场景和轨迹对应的三路完整视频�
 运行 `pnpm build:pages` 生成 `dist/pages/`。独立静态入口复用主页与交互组件，资源路径适配 `/AlayaVista/`，本地开发仍使用 `pnpm dev`。
 
 仓库管理员需在 Settings → Pages 中将 Source 设置为 GitHub Actions。`.github/workflows/pages.yml` 会在 main 分支更新时自动构建和部署，也可以手动运行。私有组织仓库需要支持 Pages 的 GitHub 套餐。
+
+## 介绍视频
+
+作者信息下方嵌入 90 秒、1920×1080 的带音乐介绍视频，首页 “Watch video” 按钮直达播放器。使用原生播放、音量和全屏控件，点击后播放，默认不预加载视频。
+
+`public/assets/AlayaVista_intro_homepage_music.mp4` 为上级 `output/intro_video/homepage_style/AlayaVista_intro_homepage_music.mp4` 的原文件副本（H.264 + AAC）；`intro-video-poster.webp` 为第 2 秒画面。
