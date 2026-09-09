@@ -16,7 +16,7 @@ export default function Home() {
   return <>
     <a className="skip-link" href="#overview">Skip to content</a>
     <header className="header">
-      <div className="header-brand"><img className="alaya-lab-logo" src="assets/alaya-lab-logo.png" alt="Alaya Lab" width={313} height={265} /><span className="header-brand-divider" aria-hidden="true" /><a href="#home" className="wordmark" aria-label="AlayaVista home">Alaya<span>Vista</span><span className="brand-dot" /></a></div>
+      <div className="header-brand"><img className="alaya-lab-logo" src="assets/alaya-lab-vertical-dark.svg" alt="Alaya Lab" width={48} height={48} /><span className="header-brand-divider" aria-hidden="true" /><a href="#home" className="wordmark" aria-label="AlayaVista home">Alaya<span>Vista</span><span className="brand-dot" /></a></div>
       <nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#showcase">Showcase</a><a href="#mugen">MUGEN</a></nav>
       <a className="header-paper" href="assets/AlayaVista.pdf" target="_blank" rel="noreferrer">Read the paper <ArrowUpRight size={15} /></a>
     </header>
@@ -33,8 +33,8 @@ export default function Home() {
         <div className="hero-bottom"><span>GLOBAL CONTEXT. SELECTIVE DETAIL.</span><a href="#overview">Explore the research <ArrowDown size={16} /></a><span>360° → YOUR VIEW</span></div>
       </section>
       <div className="authors content-width">
-        <p>Jiaming Tan<sup>1,2,*</sup><span>·</span>Mingliang Zhai<sup>1,2</sup><span>·</span>Zhen Li<sup>1</sup><span>·</span>Yuwei Wu<sup>2,†</sup><span>·</span>Kaipeng Zhang<sup>1,†,‡</sup><span>·</span>Chuanhao Li<sup>1,†,‡</sup></p>
-        <div className="affiliations"><span><sup>1</sup> ALAYA LAB</span><span><sup>2</sup> BEIJING INSTITUTE OF TECHNOLOGY</span></div>
+        <p>Jiaming Tan<sup>1,2,*</sup><span>·</span>Mingliang Zhai<sup>1,2</sup><span>·</span>Zhen Li<sup>1,3</sup><span>·</span>Yuwei Wu<sup>2,†</sup><span>·</span>Chuanhao Li<sup>1,†,‡</sup><span>·</span>Kaipeng Zhang<sup>1,†</sup></p>
+        <div className="affiliations"><span><sup>1</sup> ALAYA LAB</span><span><sup>2</sup> BEIJING INSTITUTE OF TECHNOLOGY</span><span><sup>3</sup> UNIVERSITY OF TOKYO</span></div>
         <p className="author-notes">* Work done during internship at Alaya Lab &nbsp; † Corresponding author &nbsp; ‡ Project lead</p>
       </div>
       <section id="overview" className="section content-width">
