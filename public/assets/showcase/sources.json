@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "Town square",
+    "panorama": "video samples/b8/source_03_demo_0019/panorama_encode/input_panorama_roundtrip.mp4",
+    "rendered": "video samples/b8/source_03_demo_0019/traj_01_wander/stage2/renderer_low.mp4",
+    "refined": "video samples/b8/source_03_demo_0019/traj_01_wander/stage2/wan50.mp4",
+    "viewport": "video samples/b8/source_03_demo_0019/traj_01_wander/renderer/viewport.json",
+    "frames": 477,
+    "fps": 16,
+    "duration": 29.81,
+    "last_frame_time": 29.75,
+    "output": "homepage/public/assets/showcase/comparison-1.mp4"
+  },
+  {
+    "id": 2,
+    "title": "Misty mountain trail",
+    "panorama": "video samples/b12/source_01_demo_0092/panorama_encode/input_panorama_roundtrip.mp4",
+    "rendered": "video samples/b12/source_01_demo_0092/traj_01_yaw18/stage2/renderer_low.mp4",
+    "refined": "video samples/b12/source_01_demo_0092/traj_01_yaw18/stage2/wan50.mp4",
+    "viewport": "video samples/b12/source_01_demo_0092/traj_01_yaw18/renderer/viewport.json",
+    "frames": 477,
+    "fps": 16,
+    "duration": 29.81,
+    "last_frame_time": 29.75,
+    "output": "homepage/public/assets/showcase/comparison-2.mp4"
+  },
+  {
+    "id": 3,
+    "title": "Wooded hillside",
+    "panorama": "video samples/b16/source_03_demo_0054/panorama_encode/input_panorama_roundtrip.mp4",
+    "rendered": "video samples/b16/source_03_demo_0054/traj_02_yaw18/stage2/renderer_low.mp4",
+    "refined": "video samples/b16/source_03_demo_0054/traj_02_yaw18/stage2/wan50.mp4",
+    "viewport": "video samples/b16/source_03_demo_0054/traj_02_yaw18/renderer/viewport.json",
+    "frames": 477,
+    "fps": 16,
+    "duration": 29.81,
+    "last_frame_time": 29.75,
+    "output": "homepage/public/assets/showcase/comparison-3.mp4"
+  },
+  {
+    "id": 4,
+    "title": "Flower meadow",
+    "panorama": "video samples/b26/source_01_demo_0000/panorama_encode/input_panorama_roundtrip.mp4",
+    "rendered": "video samples/b26/source_01_demo_0000/traj_02_yaw18/stage2/renderer_low.mp4",
+    "refined": "video samples/b26/source_01_demo_0000/traj_02_yaw18/stage2/wan50.mp4",
+    "viewport": "video samples/b26/source_01_demo_0000/traj_02_yaw18/renderer/viewport.json",
+    "frames": 477,
+    "fps": 16,
+    "duration": 29.81,
+    "last_frame_time": 29.75,
+    "output": "homepage/public/assets/showcase/comparison-4.mp4"
+  },
+  {
+    "id": 5,
+    "title": "Seaside promenade",
+    "panorama": "video samples/b6/source_04_demo_0109/panorama_encode/input_panorama_roundtrip.mp4",
+    "rendered": "video samples/b6/source_04_demo_0109/traj_02_pingpong/stage2/renderer_low.mp4",
+    "refined": "video samples/b6/source_04_demo_0109/traj_02_pingpong/stage2/wan50.mp4",
+    "viewport": "video samples/b6/source_04_demo_0109/traj_02_pingpong/renderer/viewport.json",
+    "frames": 477,
+    "fps": 16,
+    "duration": 29.81,
+    "last_frame_time": 29.75,
+    "output": "homepage/public/assets/showcase/comparison-5.mp4"
+  },
+  {
+    "id": 6,
+    "title": "Tidal beach",
+    "panorama": "video samples/b9/source_04_demo_0041/panorama_encode/input_panorama_roundtrip.mp4",
+    "rendered": "video samples/b9/source_04_demo_0041/traj_01_yaw18/stage2/renderer_low.mp4",
+    "refined": "video samples/b9/source_04_demo_0041/traj_01_yaw18/stage2/wan50.mp4",
+    "viewport": "video samples/b9/source_04_demo_0041/traj_01_yaw18/renderer/viewport.json",
+    "frames": 477,
+    "fps": 16,
+    "duration": 29.81,
+    "last_frame_time": 29.75,
+    "output": "homepage/public/assets/showcase/comparison-6.mp4"
+  }
+]

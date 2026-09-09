@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Town square",
+    "motion": "wander",
+    "src": "/assets/refined/refined-1.mp4",
+    "poster": "/assets/refined/refined-1.webp",
+    "source": "video samples/b8/source_03_demo_0019/traj_01_wander/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 2,
+    "name": "Misty mountain trail",
+    "motion": "Yaw rotation",
+    "src": "/assets/refined/refined-2.mp4",
+    "poster": "/assets/refined/refined-2.webp",
+    "source": "video samples/b12/source_01_demo_0092/traj_01_yaw18/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 3,
+    "name": "Wooded hillside",
+    "motion": "Yaw rotation",
+    "src": "/assets/refined/refined-3.mp4",
+    "poster": "/assets/refined/refined-3.webp",
+    "source": "video samples/b16/source_03_demo_0054/traj_02_yaw18/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 4,
+    "name": "Flower meadow",
+    "motion": "Yaw rotation",
+    "src": "/assets/refined/refined-4.mp4",
+    "poster": "/assets/refined/refined-4.webp",
+    "source": "video samples/b26/source_01_demo_0000/traj_02_yaw18/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 5,
+    "name": "Seaside promenade",
+    "motion": "Back-and-forth sweep",
+    "src": "/assets/refined/refined-5.mp4",
+    "poster": "/assets/refined/refined-5.webp",
+    "source": "video samples/b6/source_04_demo_0109/traj_02_pingpong/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 6,
+    "name": "Tidal beach",
+    "motion": "Yaw rotation",
+    "src": "/assets/refined/refined-6.mp4",
+    "poster": "/assets/refined/refined-6.webp",
+    "source": "video samples/b9/source_04_demo_0041/traj_01_yaw18/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 7,
+    "name": "Coastal panorama",
+    "motion": "Back-and-forth sweep",
+    "src": "/assets/refined/refined-7.mp4",
+    "poster": "/assets/refined/refined-7.webp",
+    "source": "video samples/b17/source_01_demo_0075/traj_01_pingpong/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 8,
+    "name": "Lakeside beach",
+    "motion": "zoom only",
+    "src": "/assets/refined/refined-8.mp4",
+    "poster": "/assets/refined/refined-8.webp",
+    "source": "video samples/b23/source_03_demo_0081/traj_01_zoom_only/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 9,
+    "name": "Hillside path",
+    "motion": "zoom only",
+    "src": "/assets/refined/refined-9.mp4",
+    "poster": "/assets/refined/refined-9.webp",
+    "source": "video samples/b11/source_04_demo_0087/traj_02_zoom_only/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 10,
+    "name": "Rocky landscape",
+    "motion": "wander",
+    "src": "/assets/refined/refined-10.mp4",
+    "poster": "/assets/refined/refined-10.webp",
+    "source": "video samples/b3/source_03_demo_0040/traj_01_wander/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 11,
+    "name": "Sandy shoreline",
+    "motion": "wander",
+    "src": "/assets/refined/refined-11.mp4",
+    "poster": "/assets/refined/refined-11.webp",
+    "source": "video samples/b7/source_01_demo_0110/traj_01_wander/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 12,
+    "name": "Wooded hillside",
+    "motion": "zoom only",
+    "src": "/assets/refined/refined-12.mp4",
+    "poster": "/assets/refined/refined-12.webp",
+    "source": "video samples/b10/source_03_demo_0054/traj_01_zoom_only/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 13,
+    "name": "Flower meadow",
+    "motion": "pan tilt",
+    "src": "/assets/refined/refined-13.mp4",
+    "poster": "/assets/refined/refined-13.webp",
+    "source": "video samples/b20/source_01_demo_0000/traj_02_pan_tilt/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 14,
+    "name": "Tidal beach",
+    "motion": "handheld",
+    "src": "/assets/refined/refined-14.mp4",
+    "poster": "/assets/refined/refined-14.webp",
+    "source": "video samples/b3/source_04_demo_0041/traj_01_handheld/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 15,
+    "name": "Town square",
+    "motion": "Back-and-forth sweep",
+    "src": "/assets/refined/refined-15.mp4",
+    "poster": "/assets/refined/refined-15.webp",
+    "source": "video samples/b14/source_03_demo_0019/traj_01_pingpong/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 16,
+    "name": "Misty mountain trail",
+    "motion": "pan tilt",
+    "src": "/assets/refined/refined-16.mp4",
+    "poster": "/assets/refined/refined-16.webp",
+    "source": "video samples/b24/source_01_demo_0092/traj_02_pan_tilt/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 17,
+    "name": "Seaside promenade",
+    "motion": "zoom only",
+    "src": "/assets/refined/refined-17.mp4",
+    "poster": "/assets/refined/refined-17.webp",
+    "source": "video samples/b6/source_04_demo_0109/traj_01_zoom_only/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  },
+  {
+    "id": 18,
+    "name": "Coastal panorama",
+    "motion": "tilt",
+    "src": "/assets/refined/refined-18.mp4",
+    "poster": "/assets/refined/refined-18.webp",
+    "source": "video samples/b11/source_01_demo_0075/traj_02_tilt/stage2/wan50.mp4",
+    "frames": 477,
+    "duration": 29.81
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Town square",
+    "motion": "wander",
+    "src": "/assets/refined/refined-1.mp4",
+    "poster": "/assets/refined/refined-1.webp"
+  },
+  {
+    "id": 2,
+    "name": "Misty mountain trail",
+    "motion": "Yaw rotation",
+    "src": "/assets/refined/refined-2.mp4",
+    "poster": "/assets/refined/refined-2.webp"
+  },
+  {
+    "id": 3,
+    "name": "Wooded hillside",
+    "motion": "Yaw rotation",
+    "src": "/assets/refined/refined-3.mp4",
+    "poster": "/assets/refined/refined-3.webp"
+  },
+  {
+    "id": 4,
+    "name": "Flower meadow",
+    "motion": "Yaw rotation",
+    "src": "/assets/refined/refined-4.mp4",
+    "poster": "/assets/refined/refined-4.webp"
+  },
+  {
+    "id": 5,
+    "name": "Seaside promenade",
+    "motion": "Back-and-forth sweep",
+    "src": "/assets/refined/refined-5.mp4",
+    "poster": "/assets/refined/refined-5.webp"
+  },
+  {
+    "id": 6,
+    "name": "Tidal beach",
+    "motion": "Yaw rotation",
+    "src": "/assets/refined/refined-6.mp4",
+    "poster": "/assets/refined/refined-6.webp"
+  },
+  {
+    "id": 7,
+    "name": "Coastal panorama",
+    "motion": "Back-and-forth sweep",
+    "src": "/assets/refined/refined-7.mp4",
+    "poster": "/assets/refined/refined-7.webp"
+  },
+  {
+    "id": 8,
+    "name": "Lakeside beach",
+    "motion": "zoom only",
+    "src": "/assets/refined/refined-8.mp4",
+    "poster": "/assets/refined/refined-8.webp"
+  },
+  {
+    "id": 9,
+    "name": "Hillside path",
+    "motion": "zoom only",
+    "src": "/assets/refined/refined-9.mp4",
+    "poster": "/assets/refined/refined-9.webp"
+  },
+  {
+    "id": 10,
+    "name": "Rocky landscape",
+    "motion": "wander",
+    "src": "/assets/refined/refined-10.mp4",
+    "poster": "/assets/refined/refined-10.webp"
+  },
+  {
+    "id": 11,
+    "name": "Sandy shoreline",
+    "motion": "wander",
+    "src": "/assets/refined/refined-11.mp4",
+    "poster": "/assets/refined/refined-11.webp"
+  },
+  {
+    "id": 12,
+    "name": "Wooded hillside",
+    "motion": "zoom only",
+    "src": "/assets/refined/refined-12.mp4",
+    "poster": "/assets/refined/refined-12.webp"
+  },
+  {
+    "id": 13,
+    "name": "Flower meadow",
+    "motion": "pan tilt",
+    "src": "/assets/refined/refined-13.mp4",
+    "poster": "/assets/refined/refined-13.webp"
+  },
+  {
+    "id": 14,
+    "name": "Tidal beach",
+    "motion": "handheld",
+    "src": "/assets/refined/refined-14.mp4",
+    "poster": "/assets/refined/refined-14.webp"
+  },
+  {
+    "id": 15,
+    "name": "Town square",
+    "motion": "Back-and-forth sweep",
+    "src": "/assets/refined/refined-15.mp4",
+    "poster": "/assets/refined/refined-15.webp"
+  },
+  {
+    "id": 16,
+    "name": "Misty mountain trail",
+    "motion": "pan tilt",
+    "src": "/assets/refined/refined-16.mp4",
+    "poster": "/assets/refined/refined-16.webp"
+  },
+  {
+    "id": 17,
+    "name": "Seaside promenade",
+    "motion": "zoom only",
+    "src": "/assets/refined/refined-17.mp4",
+    "poster": "/assets/refined/refined-17.webp"
+  },
+  {
+    "id": 18,
+    "name": "Coastal panorama",
+    "motion": "tilt",
+    "src": "/assets/refined/refined-18.mp4",
+    "poster": "/assets/refined/refined-18.webp"
+  }
+]
