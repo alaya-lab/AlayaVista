@@ -1,44 +1,84 @@
+"""Build the More Results gallery from a directory of demo MP4 files.
+
+Usage: python3 scripts/build_refined_gallery.py /path/to/demo/sample
+Requires ffmpeg, ffprobe, and Pillow. Keeps full sequences at source resolution.
+"""
 from pathlib import Path
-import json, subprocess, concurrent.futures
-from PIL import Image,ImageDraw
-import imageio_ffmpeg
-ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'homepage/public/assets/refined';OUT.mkdir(parents=True,exist_ok=True)
-F=imageio_ffmpeg.get_ffmpeg_exe()
-SAMPLES=[
-('Town square','b8/source_03_demo_0019/traj_01_wander'),
-('Misty mountain trail','b12/source_01_demo_0092/traj_01_yaw18'),
-('Wooded hillside','b16/source_03_demo_0054/traj_02_yaw18'),
-('Flower meadow','b26/source_01_demo_0000/traj_02_yaw18'),
-('Seaside promenade','b6/source_04_demo_0109/traj_02_pingpong'),
-('Tidal beach','b9/source_04_demo_0041/traj_01_yaw18'),
-('Coastal panorama','b17/source_01_demo_0075/traj_01_pingpong'),
-('Lakeside beach','b23/source_03_demo_0081/traj_01_zoom_only'),
-('Hillside path','b11/source_04_demo_0087/traj_02_zoom_only'),
-('Rocky landscape','b3/source_03_demo_0040/traj_01_wander'),
-('Sandy shoreline','b7/source_01_demo_0110/traj_01_wander'),
-('Wooded hillside','b10/source_03_demo_0054/traj_01_zoom_only'),
-('Flower meadow','b20/source_01_demo_0000/traj_02_pan_tilt'),
-('Tidal beach','b3/source_04_demo_0041/traj_01_handheld'),
-('Town square','b14/source_03_demo_0019/traj_01_pingpong'),
-('Misty mountain trail','b24/source_01_demo_0092/traj_02_pan_tilt'),
-('Seaside promenade','b6/source_04_demo_0109/traj_01_zoom_only'),
-('Coastal panorama','b11/source_01_demo_0075/traj_02_tilt'),
-]
+import argparse
+import concurrent.futures
+import hashlib
+import io
+import json
+import subprocess
+from PIL import Image
+
+REPO = Path(__file__).resolve().parents[1]
+OUT = REPO / 'public/assets/demos'
+NAMES = {
+    '000': 'Snowy lakeshore', '002': 'Winter forest', '004': 'Sheltered beach',
+    '005': 'Country road', '006': 'Harbor boats', '008': 'Historic arcade',
+    '009': 'Rural village', '010': 'Sandy coast', '012': 'Bridge at night',
+    '014': 'City marina', '015': 'Forest trail', '016': 'Coastal overlook',
+    '018': 'Country church', '020': 'Forest at sunset',
+    '024': 'Waterfront promenade', '025': 'Wooden village',
+}
+
+
+def probe(path):
+    return json.loads(subprocess.check_output([
+        'ffprobe', '-v', 'error', '-select_streams', 'v:0',
+        '-show_entries', 'stream=width,height,nb_frames,duration',
+        '-of', 'json', str(path),
+    ]))['streams'][0]
+
+
 def make(item):
- i,(name,src)=item
- source=ROOT/'video samples'/src/'stage2/wan50.mp4'
- dest=OUT/f'refined-{i}.mp4'
- subprocess.run([F,'-v','error','-y','-i',str(source),'-vf','scale=768:432','-an','-c:v','libx264','-threads','2','-crf','23','-preset','fast','-pix_fmt','yuv420p','-movflags','+faststart',str(dest)],check=True)
- subprocess.run([F,'-v','error','-y','-ss','0','-i',str(dest),'-frames:v','1',str(OUT/f'refined-{i}.webp')],check=True)
- frames,duration=imageio_ffmpeg.count_frames_and_secs(str(dest));assert frames==477
- motion=src.split('/')[-1].split('_',2)[-1].replace('_',' ').replace('yaw18','Yaw rotation').replace('pingpong','Back-and-forth sweep')
- print(f'{i}: {frames} frames',flush=True)
- return {'id':i,'name':name,'motion':motion,'src':f'/assets/refined/refined-{i}.mp4','poster':f'/assets/refined/refined-{i}.webp','source':str(source.relative_to(ROOT)),'frames':frames,'duration':duration}
-with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool: rows=list(pool.map(make,enumerate(SAMPLES,1)))
-(OUT/'sources.json').write_text(json.dumps(rows,indent=2)+'\n')
-(ROOT/'homepage/app/refined-samples.json').write_text(json.dumps([{k:r[k] for k in ['id','name','motion','src','poster']} for r in rows],indent=2)+'\n')
-sheet=Image.new('RGB',(960,200*6),'#14141a');d=ImageDraw.Draw(sheet)
-for j,r in enumerate(rows):
- im=Image.open(OUT/f"refined-{r['id']}.webp");im.thumbnail((320,180));x=j%3*320;y=j//3*200;sheet.paste(im,(x,y));d.text((x+4,y+183),str(r['id'])+' '+r['name'],fill='white')
-sheet.save(ROOT/'homepage/work/refined/contact.jpg')
+    index, source = item
+    dest = OUT / source.name
+    original = probe(source)
+    subprocess.run([
+        'ffmpeg', '-v', 'error', '-y', '-i', str(source), '-map', '0:v:0',
+        '-an', '-c:v', 'libx264', '-threads', '2', '-crf', '20',
+        '-preset', 'fast', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', str(dest),
+    ], check=True)
+    result = probe(dest)
+    for key in ['width', 'height', 'nb_frames']:
+        assert result[key] == original[key], (source.name, key, original, result)
+    assert abs(float(result['duration']) - float(original['duration'])) < .01
+    frame = subprocess.check_output([
+        'ffmpeg', '-v', 'error', '-i', str(dest), '-frames:v', '1',
+        '-f', 'image2pipe', '-c:v', 'png', '-',
+    ])
+    with Image.open(io.BytesIO(frame)) as poster:
+        poster.save(dest.with_suffix('.webp'), quality=85)
+    code = source.stem.split('_')[1]
+    row = {
+        'id': index, 'name': NAMES.get(code, f'Scene {code}'),
+        'motion': 'Camera rotation', 'duration': round(float(result['duration']), 2),
+        'src': f'assets/demos/{dest.name}',
+        'poster': f'assets/demos/{dest.stem}.webp',
+        'source': source.name, 'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
+        'frames': int(result['nb_frames']), 'width': result['width'], 'height': result['height'],
+    }
+    print(f"{index}: {source.name}, {row['frames']} frames verified", flush=True)
+    return row
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('source_dir', type=Path)
+    args = parser.parse_args()
+    sources = sorted(args.source_dir.glob('*.mp4'))
+    if not sources:
+        parser.error('No MP4 files found in the source directory')
+    OUT.mkdir(parents=True, exist_ok=True)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
+        rows = list(pool.map(make, enumerate(sources, 1)))
+    (OUT / 'sources.json').write_text(json.dumps(rows, indent=2) + '\n')
+    keys = ['id', 'name', 'motion', 'duration', 'src', 'poster']
+    (REPO / 'app/refined-samples.json').write_text(
+        json.dumps([{k: row[k] for k in keys} for row in rows], indent=2) + '\n')
+
+
+if __name__ == '__main__':
+    main()

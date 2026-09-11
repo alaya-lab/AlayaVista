@@ -34,7 +34,7 @@ export default function Home() {
       </section>
       <div className="authors content-width">
         <p>Jiaming Tan<sup>1,2,*</sup><span>·</span>Mingliang Zhai<sup>1,2</sup><span>·</span>Zhen Li<sup>1,3</sup><span>·</span>Yuwei Wu<sup>2,†</sup><span>·</span>Chuanhao Li<sup>1,†,‡</sup><span>·</span>Kaipeng Zhang<sup>1,†</sup></p>
-        <div className="affiliations"><span><sup>1</sup> ALAYA LAB</span><span><sup>2</sup> BEIJING INSTITUTE OF TECHNOLOGY</span><span><sup>3</sup> UNIVERSITY OF TOKYO</span></div>
+        <div className="affiliations"><span><sup>1</sup> ALAYA LAB</span><span><sup>2</sup> BEIJING INSTITUTE OF TECHNOLOGY</span><span><sup>3</sup> THE UNIVERSITY OF TOKYO</span></div>
         <p className="author-notes">* Work done during internship at Alaya Lab &nbsp; † Corresponding author &nbsp; ‡ Project lead</p>
       </div>
       <section id="intro-video" className="intro-video content-width" aria-labelledby="intro-video-title">

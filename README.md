@@ -22,9 +22,9 @@ pnpm build
 - `app/site-interactions.tsx`：背景视频播放/暂停、BibTeX 复制。
 - `public/assets/`：网页压缩视频、WebP 图片和论文 PDF。
 
-所有数据来自 2026-09-09 版本的 AlayaVista.pdf，结果表按论文 Table 1 展示。Code 链接指向 https://github.com/alaya-lab/AlayaVista，BibTeX URL 使用论文提供的链接。视频为用户提供的 stage2/wan50.mp4 的网页压缩版本，不代表浏览器内实时生成。
+所有数据来自 2026-09-09 版本的 AlayaVista.pdf，结果表按论文 Table 1 展示。Code 链接指向 https://github.com/alaya-lab/AlayaVista，BibTeX URL 使用论文提供的链接。展示视频来自用户提供的本地素材，不代表浏览器内实时生成。
 
-六个样例的原始来源在上级 `figures/figure6_wan50/sources.json` 中；`scene-1` 至 `scene-6` 对应该文件的第 1 至 6 行场景。背景复用第 5 个样例。图表源自上级 `figures/pdf/`。
+六个样例的原始来源在上级 `figures/figure6_wan50/sources.json` 中；`scene-1` 至 `scene-6` 对应该文件的第 1 至 6 行场景。当前背景来源见下方说明。图表源自上级 `figures/pdf/`。
 
 网页支持小屏幕、键盘焦点、减少动态效果偏好，以及原生视频控件。无外部字体或媒体依赖。
 
@@ -47,9 +47,15 @@ Showcase 的六个样例使用同一场景和轨迹对应的三路完整视频�
 
 ## 更多 Refined 样例
 
-`app/refined-gallery.tsx` 展示 18 条约 30 秒的 Refined 完整视频，三行交错方向慢速循环滚动。悬停或键盘聚焦暂停该行滚动；全局按钮暂停滚动与播放；点击卡片打开可关闭的原生控件播放器。仅加载进入视区的预览，离开视区或切换浏览器标签后暂停。遵循系统减少动态效果偏好。
+`app/refined-gallery.tsx` 展示来自 `/Users/admin/Downloads/demo/sample` 的全部 16 段视频，每段约 20 秒。按文件名排序，分为三行循环展示；数量、行分配和时长均读取 `app/refined-samples.json`。悬停或键盘聚焦暂停该行滚动，点击卡片播放完整视频。
 
-`scripts/build_refined_gallery.py` 从 18 组原始 `stage2/wan50.mp4` 生成 768×432 网页视频和首帧封面，均为 477 帧、16 fps。来源记录在 `public/assets/refined/sources.json`，页面数据在 `app/refined-samples.json`。
+运行 `python3 scripts/build_refined_gallery.py /path/to/demo/sample` 可重建网页素材，需要 ffmpeg、ffprobe 和 Pillow。保留源视频 1024×576 分辨率、完整帧数和时长，编码为适合网页播放的 H.264 MP4。封面为各视频首帧，素材及校验记录位于 `public/assets/demos/`。
+
+## 当前背景与 Showcase
+
+首页背景使用上级 `back.mov`，转为 1920×1080 静音 H.264 MP4（`public/assets/hero-background.mp4`），保留完整时长并启用 faststart，封面取首帧。
+
+Showcase 展示原始第 2、4、6 条：Misty mountain trail、Flower meadow、Tidal beach。页面依次编号 01–03，沿用对应的 `comparison-2`、`comparison-4`、`comparison-6` 三路同步视频。
 
 ## GitHub Pages
 

@@ -42,11 +42,12 @@ function Preview({ sample, paused }: { sample: Sample; paused: boolean }) {
 export function RefinedGallery() {
   const [paused, setPaused] = useState(false);
   const [active, setActive] = useState<Sample | null>(null);
-  const rows = [samples.slice(0, 6), samples.slice(6, 12), samples.slice(12, 18)];
+  const rowCount = Math.min(3, samples.length);
+  const rows = Array.from({ length: rowCount }, (_, index) => samples.slice(Math.floor(index * samples.length / rowCount), Math.floor((index + 1) * samples.length / rowCount)));
   return <section id="more-results" className="refined-gallery" aria-label="More refined video results">
     <div className="content-width">
       <div className="section-label"><span>03</span> MORE RESULTS</div>
-      <div className="section-heading"><h2>More scenes.<br /><em>More perspectives.</em></h2><p>Explore 18 refined video outputs.<br />Select a scene to watch the full sequence.</p></div>
+      <div className="section-heading"><h2>More scenes.<br /><em>More perspectives.</em></h2><p>Explore {samples.length} refined video outputs.<br />Select a scene to watch the full sequence.</p></div>
       <div className="gallery-toolbar"><div><span>REFINED OUTPUTS</span><p>Camera-controlled scenes, brought into detail.</p></div><Button variant="outline" onClick={() => setPaused(value => !value)} aria-pressed={paused} aria-label={paused ? 'Resume gallery motion' : 'Pause gallery motion'}>{paused ? <Play size={15} /> : <Pause size={15} />}{paused ? 'Resume motion' : 'Pause motion'}</Button></div>
     </div>
     <div className="gallery-rows" data-paused={paused || active !== null}>
@@ -55,7 +56,7 @@ export function RefinedGallery() {
           {[0, 1].map(copy => <div className={`gallery-group ${copy ? 'gallery-group-copy' : ''}`} key={copy}>
             {row.map(sample => <Button variant="ghost" key={sample.id} className="gallery-card" tabIndex={copy ? -1 : 0} onClick={() => setActive(sample)} aria-label={`Play ${sample.name}, ${sample.motion}`}>
               <Preview sample={sample} paused={paused || active !== null} />
-              <span className="gallery-duration">~30 s</span>
+              <span className="gallery-duration">~{Math.round(sample.duration)} s</span>
               <span className="gallery-card-caption"><span>{sample.name}</span><Maximize2 size={16} /></span>
             </Button>)}
           </div>)}

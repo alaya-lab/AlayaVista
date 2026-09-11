@@ -23,7 +23,7 @@ export function HeroVideo() {
     if (video.current.paused) { try { await video.current.play(); } catch { setFailed(true); } }
     else video.current.pause();
   }
-  return <><video ref={video} className="hero-video" muted loop playsInline preload="none" poster="assets/scene-5.webp" aria-label="AlayaVista generated seaside promenade video" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setFailed(true)}><source src="assets/scene-5.mp4" type="video/mp4" /></video>{!failed && <Button className="hero-play" variant="outline" size="icon" aria-label={playing ? 'Pause background video' : 'Play background video'} onClick={toggle}>{playing ? <Pause size={16} /> : <Play size={16} />}</Button>}</>;
+  return <><video ref={video} className="hero-video" muted loop playsInline preload="none" poster="assets/hero-background.webp" aria-label="AlayaVista background video" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setFailed(true)}><source src="assets/hero-background.mp4" type="video/mp4" /></video>{!failed && <Button className="hero-play" variant="outline" size="icon" aria-label={playing ? 'Pause background video' : 'Play background video'} onClick={toggle}>{playing ? <Pause size={16} /> : <Play size={16} />}</Button>}</>;
 }
 export function Citation() {
   const [status, setStatus] = useState('Copy BibTeX');
@@ -39,16 +39,13 @@ export function Citation() {
 
 
 const showcaseScenes = [
-  { id: 1, name: 'Town square', motion: 'Wander', description: 'Explore the square through a wandering camera. Compare building edges, windows, and paving across the three stages.' },
   { id: 2, name: 'Misty mountain trail', motion: 'Yaw rotation', description: 'Turn along a misty mountain trail. Follow the viewport across the panorama and compare the vegetation in the rendered and refined views.' },
-  { id: 3, name: 'Wooded hillside', motion: 'Yaw rotation', description: 'Look around a wooded hillside. Compare tree branches, stonework, and grass as the camera rotates.' },
   { id: 4, name: 'Flower meadow', motion: 'Yaw rotation', description: 'Sweep across an open meadow. Watch the selected field of view move through the panoramic seam and into the flower field.' },
-  { id: 5, name: 'Seaside promenade', motion: 'Back-and-forth sweep', description: 'Follow a back-and-forth camera sweep along the waterfront. Compare palm trees, railings, and the coastline at matching timestamps.' },
   { id: 6, name: 'Tidal beach', motion: 'Yaw rotation', description: 'Rotate across a tidal beach. Compare the wet sand, shoreline, and headland from panoramic context to the final perspective.' },
 ];
 
 export function Showcase() {
-  const [selected, setSelected] = useState(1);
+  const [selected, setSelected] = useState(showcaseScenes[0].id);
   const stage = useRef<HTMLDivElement>(null);
   const outgoing = useRef<HTMLCanvasElement>(null);
   const transition = useRef<Animation | null>(null);
@@ -81,8 +78,8 @@ export function Showcase() {
 
   return <Tabs orientation="vertical" value={selected} onValueChange={changeScene} className="showcase-browser">
     <TabsList className="showcase-list" aria-label="Choose a video scene">
-      {showcaseScenes.map(scene => <TabsTrigger key={scene.id} value={scene.id} className="showcase-option">
-        <span className="showcase-number">{String(scene.id).padStart(2, '0')}</span>
+      {showcaseScenes.map((scene, index) => <TabsTrigger key={scene.id} value={scene.id} className="showcase-option">
+        <span className="showcase-number">{String(index + 1).padStart(2, '0')}</span>
         <span className="showcase-option-body"><span className="showcase-name">{scene.name}</span><span className="showcase-description-reveal" aria-hidden={selected !== scene.id}><span className="showcase-description-clip"><span className="showcase-description">{scene.description}</span></span></span></span>
       </TabsTrigger>)}
     </TabsList>
