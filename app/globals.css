@@ -69,7 +69,7 @@
 .gallery-group{display:flex;gap:var(--gallery-gap);padding-right:var(--gallery-gap)}
 .gallery-card[data-slot="button"]{position:relative;display:block;width:var(--gallery-card-width);height:auto;aspect-ratio:16/9;padding:0;overflow:hidden;border-radius:14px;border:1px solid #ffffff20;background:#24232c;isolation:isolate;flex:none;text-align:left;white-space:normal;box-shadow:0 10px 28px #0002}
 .gallery-card video{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}.gallery-card:hover video{transform:scale(1.025)}
-.gallery-card-caption{position:absolute;left:0;right:0;bottom:0;padding:32px 16px 14px;background:linear-gradient(transparent,#080910b8);display:flex;align-items:center;justify-content:space-between;color:#fff;font-size:14px;font-weight:400;z-index:1}.gallery-duration{position:absolute;top:12px;right:12px;padding:4px 7px;background:#14141a70;border:1px solid #ffffff20;border-radius:5px;color:#fff;font-size:11px;letter-spacing:.5px;backdrop-filter:blur(8px)}
+.gallery-card-caption{position:absolute;left:0;right:0;bottom:0;padding:32px 16px 14px;background:linear-gradient(transparent,#080910b8);display:flex;align-items:center;justify-content:space-between;color:#fff;font-size:14px;font-weight:400;z-index:1}
 .gallery-rows[data-paused="true"] .gallery-track,.gallery-row:hover .gallery-track,.gallery-row:focus-within .gallery-track{animation-play-state:paused}
 .gallery-card:focus-visible{outline:2px solid var(--primary);outline-offset:-3px}
 @keyframes gallery-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}

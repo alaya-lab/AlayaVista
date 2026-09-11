@@ -56,7 +56,6 @@ export function RefinedGallery() {
           {[0, 1].map(copy => <div className={`gallery-group ${copy ? 'gallery-group-copy' : ''}`} key={copy}>
             {row.map(sample => <Button variant="ghost" key={sample.id} className="gallery-card" tabIndex={copy ? -1 : 0} onClick={() => setActive(sample)} aria-label={`Play ${sample.name}, ${sample.motion}`}>
               <Preview sample={sample} paused={paused || active !== null} />
-              <span className="gallery-duration">~{Math.round(sample.duration)} s</span>
               <span className="gallery-card-caption"><span>{sample.name}</span><Maximize2 size={16} /></span>
             </Button>)}
           </div>)}
