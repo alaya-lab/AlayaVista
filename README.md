@@ -67,4 +67,4 @@ Showcase 展示原始第 2、4、6 条：Misty mountain trail、Flower meadow、
 
 作者信息下方嵌入 90 秒、1920×1080 的带音乐介绍视频，首页 “Watch video” 按钮直达播放器。使用原生播放、音量和全屏控件，点击后播放，默认不预加载视频。
 
-`public/assets/AlayaVista_intro_homepage_music.mp4` 为上级 `output/intro_video/homepage_style/AlayaVista_intro_homepage_music.mp4` 的原文件副本（H.264 + AAC）；`intro-video-poster.webp` 为第 2 秒画面。
+`public/assets/AlayaVista_intro_homepage_music.mp4` 为上级 `output/intro_video/homepage_20260911/AlayaVista_intro_homepage_music.mp4` 的原文件副本（H.264 + AAC）；`intro-video-poster.webp` 为第 2 秒画面。
