@@ -28,7 +28,7 @@ export default function Home() {
           <div className="eyebrow"><span /> AUTOREGRESSIVE WORLD MODEL</div>
           <h1>Alaya<span>Vista</span></h1>
           <p className="hero-subtitle">Streaming World Modeling<br />from Panoramic States to Perspective Video</p>
-          <div className="hero-actions"><a className="action action-light" href="assets/AlayaVista.pdf" target="_blank" rel="noreferrer"><FileText size={17} /> Read the paper <ArrowUpRight size={16} /></a><a className="action action-glass" href="https://github.com/alaya-lab/AlayaVista" target="_blank" rel="noreferrer"><Code2 size={17} /> Code <ArrowUpRight size={16} /></a><a className="action action-glass" href="#intro-video"><Play size={17} /> Watch video</a></div>
+          <div className="hero-actions"><a className="action action-light" href="assets/AlayaVista.pdf" target="_blank" rel="noreferrer"><FileText size={17} /> Read the paper <ArrowUpRight size={16} /></a><a className="action action-glass" href="https://github.com/AlayaLab/AlayaVista" target="_blank" rel="noreferrer"><Code2 size={17} /> Code <ArrowUpRight size={16} /></a><a className="action action-glass" href="#intro-video"><Play size={17} /> Watch video</a></div>
         </div>
         <div className="hero-bottom"><span>GLOBAL CONTEXT. SELECTIVE DETAIL.</span><a href="#overview">Explore the research <ArrowDown size={16} /></a><span>360° → YOUR VIEW</span></div>
       </section>

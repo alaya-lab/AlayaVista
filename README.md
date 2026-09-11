@@ -22,7 +22,7 @@ pnpm build
 - `app/site-interactions.tsx`：背景视频播放/暂停、BibTeX 复制。
 - `public/assets/`：网页压缩视频、WebP 图片和论文 PDF。
 
-所有数据来自 2026-09-09 版本的 AlayaVista.pdf，结果表按论文 Table 1 展示。Code 链接指向 https://github.com/alaya-lab/AlayaVista，BibTeX URL 使用论文提供的链接。展示视频来自用户提供的本地素材，不代表浏览器内实时生成。
+所有数据来自 2026-09-09 版本的 AlayaVista.pdf，结果表按论文 Table 1 展示。Code 链接指向 https://github.com/AlayaLab/AlayaVista，BibTeX URL 使用论文提供的链接。展示视频来自用户提供的本地素材，不代表浏览器内实时生成。
 
 六个样例的原始来源在上级 `figures/figure6_wan50/sources.json` 中；`scene-1` 至 `scene-6` 对应该文件的第 1 至 6 行场景。当前背景来源见下方说明。图表源自上级 `figures/pdf/`。
 
