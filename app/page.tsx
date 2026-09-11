@@ -25,7 +25,7 @@ export default function Home() {
         <HeroVideo />
         <div className="hero-shade" />
         <div className="hero-content">
-          <div className="eyebrow"><span /> AUTOREGRESSIVE (AR) WORLD MODEL</div>
+          <div className="eyebrow"><span /> AUTOREGRESSIVE WORLD MODEL</div>
           <h1>Alaya<span>Vista</span></h1>
           <p className="hero-subtitle">Streaming World Modeling<br />from Panoramic States to Perspective Video</p>
           <div className="hero-actions"><a className="action action-light" href="assets/AlayaVista.pdf" target="_blank" rel="noreferrer"><FileText size={17} /> Read the paper <ArrowUpRight size={16} /></a><a className="action action-glass" href="https://github.com/alaya-lab/AlayaVista" target="_blank" rel="noreferrer"><Code2 size={17} /> Code <ArrowUpRight size={16} /></a><a className="action action-glass" href="#intro-video"><Play size={17} /> Watch video</a></div>
@@ -46,7 +46,7 @@ export default function Home() {
       </section>
       <section id="overview" className="section content-width">
         <Label n="01">THE IDEA</Label>
-        <div className="split-heading"><h2>A world beyond<br />the <em>field of view.</em></h2><div><p className="lead">Keep the whole scene in context.<br />Bring the view you choose into focus.</p><p>AlayaVista is a camera-controllable autoregressive (AR) world model that separates panoramic world evolution from perspective observation synthesis. Starting from a single image, it maintains a camera-conditioned 360° latent state, renders the requested viewport, and refines that view into detailed video.</p></div></div>
+        <div className="split-heading"><h2>A world beyond<br />the <em>field of view.</em></h2><div><p className="lead">Keep the whole scene in context.<br />Bring the view you choose into focus.</p><p>AlayaVista is a camera-controllable autoregressive world model that separates panoramic world evolution from perspective observation synthesis. Starting from a single image, it maintains a camera-conditioned 360° latent state, renders the requested viewport, and refines that view into detailed video.</p></div></div>
         <div className="stats overview-stats"><div><strong>360<span>°</span></strong><p>Panoramic scene context</p></div><div><strong>1 <span>image</span></strong><p>To initialize a world</p></div><div><strong>1024 <span>×</span> 576</strong><p>Perspective output resolution</p></div><div><strong>4 <span>steps</span></strong><p>Distilled perspective refinement</p></div><div className="ar-stat"><strong>AutoRegressive</strong><p>chunk by chunk</p></div></div>
         <figure className="paper-figure"><a href="assets/teaser.webp" target="_blank" rel="noreferrer" aria-label="Open panoramic state and perspective output figure"><img width={1389} height={488} src="assets/teaser.webp" alt="Panoramic state evolution at 0, 10, and 20 seconds, with queried perspective viewports and refined details." loading="lazy" /></a><figcaption><span>GLOBAL TO LOCAL</span> Panoramic states evolve over time. Only the queried perspective view is refined to display quality.</figcaption></figure>
       </section>
