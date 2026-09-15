@@ -3,16 +3,14 @@ import { useEffect, useRef, useState } from 'react';
 import { Check, Copy, Pause, Play, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-const citation = `@misc{tan2026alayavista,
-  title  = {AlayaVista: Streaming World Modeling from
-            Panoramic States to Perspective Video},
-  author = {Jiaming Tan and Mingliang Zhai and Zhen Li and
-            Yuwei Wu and Chuanhao Li and Kaipeng Zhang},
-  year   = {2026},
-  eprint = {2609.14462},
-  archivePrefix = {arXiv},
-  primaryClass = {cs.CV},
-  url    = {https://arxiv.org/abs/2609.14462}
+const citation = `@misc{tan2026alayavistastreamingworldmodeling,
+      title={AlayaVista: Streaming World Modeling from Panoramic States to Perspective Video},
+      author={Jiaming Tan and Mingliang Zhai and Zhen Li and Yuwei Wu and Chuanhao Li and Kaipeng Zhang},
+      year={2026},
+      eprint={2609.14462},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2609.14462},
 }`;
 export function HeroVideo() {
   const video = useRef<HTMLVideoElement>(null);
