@@ -9,7 +9,10 @@ const citation = `@misc{tan2026alayavista,
   author = {Jiaming Tan and Mingliang Zhai and Zhen Li and
             Yuwei Wu and Chuanhao Li and Kaipeng Zhang},
   year   = {2026},
-  url    = {https://alaya-lab.github.io/AlayaVista}
+  eprint = {2609.14462},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CV},
+  url    = {https://arxiv.org/abs/2609.14462}
 }`;
 export function HeroVideo() {
   const video = useRef<HTMLVideoElement>(null);

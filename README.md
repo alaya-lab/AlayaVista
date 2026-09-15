@@ -2,7 +2,7 @@
 
 Static project page for **AlayaVista: Streaming World Modeling from Panoramic States to Perspective Video**, a camera-controllable autoregressive world model. Served via GitHub Pages.
 
-[Project Page](https://alaya-lab.github.io/AlayaVista/) · [Paper](public/assets/AlayaVista.pdf) · [Code](https://github.com/AlayaLab/AlayaVista)
+[Project Page](https://alaya-lab.github.io/AlayaVista/) · [Paper](https://arxiv.org/abs/2609.14462) · [Code](https://github.com/AlayaLab/AlayaVista)
 
 ## Local preview
 
