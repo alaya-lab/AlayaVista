@@ -37,6 +37,10 @@ export default function Home() {
         <div className="affiliations"><span><sup>1</sup> ALAYA LAB</span><span><sup>2</sup> BEIJING INSTITUTE OF TECHNOLOGY</span><span><sup>3</sup> THE UNIVERSITY OF TOKYO</span></div>
         <p className="author-notes">* Work done during internship at Alaya Lab &nbsp; † Corresponding author &nbsp; ‡ Project lead</p>
       </div>
+      <section id="news" className="news content-width" aria-labelledby="news-title">
+        <h2 id="news-title">News</h2>
+        <ul><li><time dateTime="2026-09-30">2026-09-30</time><p>MUGEN released! Please refer to the <a href="https://alaya-lab.github.io/MUGEN/" target="_blank" rel="noreferrer">MUGEN project page <ArrowUpRight size={14} /></a>.</p></li></ul>
+      </section>
       <section id="intro-video" className="intro-video content-width" aria-labelledby="intro-video-title">
         <div className="section-heading"><h2 id="intro-video-title">Meet <em>AlayaVista.</em></h2><p>Watch the 90-second introduction.</p></div>
         <video controls playsInline preload="none" poster="assets/intro-video-poster.webp" width={1920} height={1080} aria-label="AlayaVista introduction with music">
